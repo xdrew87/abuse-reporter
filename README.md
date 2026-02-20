@@ -1,4 +1,4 @@
-# AbuseIPDB Reporter CLI
+# AbuseIPDB Reporter
 
 <div align="center">
 
@@ -6,34 +6,92 @@
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Status](https://img.shields.io/badge/status-production%20ready-brightgreen.svg)
 
-**A beautiful, production-ready Python CLI tool for submitting abuse reports to AbuseIPDB API v2**
+**Professional tool for submitting abuse reports to AbuseIPDB API v2**
 
-[Features](#features) • [Installation](#installation) • [Usage](#usage) • [Examples](#examples)
+**Available as both beautiful GUI application and powerful CLI**
+
+[Features](#features) • [GUI](#-gui-application) • [CLI](#-cli-mode) • [Installation](#installation)
 
 </div>
 
 ---
 
-A powerful command-line interface for reporting malicious IP addresses to AbuseIPDB without leaving your terminal. Features an elegant interactive menu, bulk reporting capabilities, and comprehensive validation.
+A production-ready application for reporting malicious IP addresses to AbuseIPDB. Choose between a modern graphical interface (PyQt6) or a powerful command-line tool. Both share the same backend with full support for all 23 AbuseIPDB categories.
 
 ## ✨ Features
 
-- **Beautiful Terminal UI** - Color-coded interface with formatted menus and real-time feedback
-- **Interactive & CLI Modes** - Choose between guided prompts or direct command-line arguments
-- **Bulk Reporting** - Submit multiple reports in one session with progress tracking
-- **All 23 Categories** - Full support for official AbuseIPDB categories with ID-based selection
-- **IPv4 & IPv6** - Validates both IPv4 and IPv6 address formats
-- **Type-Safe** - Complete type hints for reliability and IDE support
-- **Secure** - API key loaded from `.env` file, never hardcoded
-- **Dry-Run Mode** - Validate reports before submission
-- **Verbose Output** - Inspect full API responses for debugging
-- **Production-Ready** - Comprehensive error handling and proper exit codes
+### Both GUI & CLI
+- **All 23 Categories** - Complete official AbuseIPDB category support
+- **IPv4 & IPv6** - Validates both address formats
+- **Bulk Reporting** - Submit multiple reports efficiently
+- **Dry-Run Mode** - Validate before submitting
+- **Type-Safe** - Complete type hints (Python 3.8+)
+- **Secure** - API key stored in `.env`, never hardcoded
+- **Production-Ready** - Comprehensive error handling
+
+### GUI (PyQt6)
+- 🎨 Modern, professional interface
+- 📱 Beautiful dark-themed design with color-coded feedback
+- 🛡️ Application logo and branding
+- 📊 Real-time progress indicators
+- ⚙️ Settings tab with API configuration
+- 📚 Built-in category reference
+- 🚀 Windows `.exe` distribution ready
+
+### CLI
+- 🖥️ Elegant terminal UI with colors
+- 🎯 Interactive menu mode
+- 📝 Direct command-line arguments
+- 📖 Comprehensive help output
+- 📊 Progress tracking for bulk operations
+
+## 🖥️ GUI Application
+
+### Features
+
+- **Submit Tab** - Report single IPs with confidence slider
+- **Bulk Tab** - Submit multiple IPs simultaneously
+- **Categories Tab** - Browse all 23 abuse categories
+- **Settings Tab** - Configure API key and view setup instructions
+
+### Running the GUI
+
+**Option 1: Download Pre-Built Windows EXE (Easiest)**
+```bash
+# Go to GitHub Releases
+# Download abuse-reporter.exe
+# Run it - no Python installation needed!
+```
+See [EXE_SETUP_GUIDE.md](EXE_SETUP_GUIDE.md) for detailed Windows exe instructions.
+
+**Option 2: Run from Source**
+```bash
+# Requires PyQt6
+pip install -r requirements.txt
+
+# Run GUI
+python3 gui.py
+```
+
+
+## ⌨️ CLI Mode
 
 ## 📦 Installation
 
-### Requirements
-- Python 3.8 or higher
-- pip (Python package manager)
+### For Windows Users (No Python Needed)
+**Easiest option:**
+1. Go to [GitHub Releases](https://github.com/xdrew87/abuse-reporter/releases)
+2. Download `abuse-reporter.exe`
+3. Run it!
+
+See [EXE_SETUP_GUIDE.md](EXE_SETUP_GUIDE.md) for detailed setup.
+
+### For Developers / Python Users
+
+**Requirements**
+- **Python 3.8** or higher
+- **pip** (Python package manager)
+- **PyQt6** (for GUI - optional for CLI-only)
 
 ### Setup
 
@@ -44,47 +102,60 @@ A powerful command-line interface for reporting malicious IP addresses to AbuseI
    ```
 
 2. **Install dependencies**
+   
+   For GUI + CLI (recommended):
    ```bash
    pip install -r requirements.txt
    ```
-
-3. **Configure API key**
-   ```bash
-   # Create .env file from template
-   cp .env.example .env
    
-   # Edit .env and add your AbuseIPDB API key
-   # ABUSEIPDB_API_KEY=your_api_key_here
+   For CLI only:
+   ```bash
+   pip install requests python-dotenv
    ```
 
-   Get your API key from [AbuseIPDB](https://www.abuseipdb.com/api)
+3. **Configure API Key**
+   ```bash
+   # Copy template
+   cp .env.example .env
+   
+   # Edit .env with your API key
+   # ABUSEIPDB_API_KEY=your_key_here
+   ```
+   
+   Get your **FREE** API key from [AbuseIPDB](https://www.abuseipdb.com/api)
 
 4. **Verify installation**
    ```bash
+   # Test CLI
    python main.py --list-categories
+   
+   # Launch GUI (if installed)
+   python gui.py
    ```
 
 ## 🚀 Quick Start
 
-### Interactive Mode (Recommended)
+### Windows Users - GUI (Recommended)
+**Download & Run:**
+1. Download `abuse-reporter.exe` from [Releases](https://github.com/xdrew87/abuse-reporter/releases)
+2. Extract files
+3. Run `abuse-reporter.exe`
+4. Settings tab → Paste API key → Save
+
+**[Full Windows Setup Guide →](EXE_SETUP_GUIDE.md)**
+
+### Linux/Mac Users OR Source Code
+
+**GUI Mode**
 ```bash
-python main.py
+pip install -r requirements.txt
+python3 gui.py
 ```
 
-Launches an intuitive menu:
-- Submit Abuse Report
-- View Categories
-- Test Report (Dry-Run)
-- Bulk Report
-- Exit
-
-### Command-Line Mode
+**CLI Mode (No PyQt6 needed)**
 ```bash
-# Single report
-python main.py --ip 192.0.2.1 --categories brute-force,ssh --comment "SSH attack"
-
-# List all categories
-python main.py --list-categories
+pip install requests python-dotenv
+python3 main.py
 ```
 
 ## 📖 Usage
