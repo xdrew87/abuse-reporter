@@ -3,239 +3,198 @@
 <div align="center">
 
 ![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)
+![PyQt6](https://img.shields.io/badge/GUI-PyQt6-green.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Status](https://img.shields.io/badge/status-production%20ready-brightgreen.svg)
+![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)
 
-**Professional tool for submitting abuse reports to AbuseIPDB API v2**
+## Professional Abuse Reporter for AbuseIPDB
 
-**Available as both beautiful GUI application and powerful CLI**
+**Beautiful GUI Application • Windows EXE • Powerful CLI**
 
-[Features](#features) • [GUI](#-gui-application) • [CLI](#-cli-mode) • [Installation](#installation)
+### 🎯 Quick Links
+[📥 Download EXE](https://github.com/xdrew87/abuse-reporter/releases) • [📖 Setup Guide](EXE_SETUP_GUIDE.md) • [✨ What's New](RELEASE_NOTES_v2.0.0.md) • [📋 Categories](#categories-ids-1-23)
 
 </div>
 
 ---
 
-A production-ready application for reporting malicious IP addresses to AbuseIPDB. Choose between a modern graphical interface (PyQt6) or a powerful command-line tool. Both share the same backend with full support for all 23 AbuseIPDB categories.
+## 🚀 Getting Started
+
+### 🪟 Windows Users (Easiest)
+```
+1. Download abuse-reporter.exe from GitHub Releases
+2. Extract files
+3. Run abuse-reporter.exe
+4. Settings tab → Paste API key → Save
+Done! 🎉
+```
+[Full Windows Setup Guide →](EXE_SETUP_GUIDE.md)
+
+### 💻 Linux/Mac or Source Code
+```bash
+git clone https://github.com/xdrew87/abuse-reporter.git
+cd abuse-reporter
+pip install -r requirements.txt
+python3 gui.py  # GUI
+# OR
+python3 main.py # CLI
+```
+
+---
 
 ## ✨ Features
 
-### Both GUI & CLI
-- **All 23 Categories** - Complete official AbuseIPDB category support
-- **IPv4 & IPv6** - Validates both address formats
-- **Bulk Reporting** - Submit multiple reports efficiently
-- **Dry-Run Mode** - Validate before submitting
-- **Type-Safe** - Complete type hints (Python 3.8+)
-- **Secure** - API key stored in `.env`, never hardcoded
-- **Production-Ready** - Comprehensive error handling
+### 🎨 GUI Application (PyQt6)
+- ✅ Modern, professional interface with dark mode
+- ✅ Single & bulk IP reporting 
+- ✅ Interactive confidence slider (0-100%)
+- ✅ Real-time progress tracking
+- ✅ API key management in Settings
+- ✅ Browse all 23 categories
+- ✅ Dry-run validation mode
+- ✅ Windows EXE ready to distribute
 
-### GUI (PyQt6)
-- 🎨 Modern, professional interface
-- 📱 Beautiful dark-themed design with color-coded feedback
-- 🛡️ Application logo and branding
-- 📊 Real-time progress indicators
-- ⚙️ Settings tab with API configuration
-- 📚 Built-in category reference
-- 🚀 Windows `.exe` distribution ready
+### 🖥️ CLI (Command Line)
+- ✅ Interactive menu mode
+- ✅ Direct command arguments
+- ✅ Batch reporting scripts
+- ✅ Color-coded output
+- ✅ All features in GUI
 
-### CLI
-- 🖥️ Elegant terminal UI with colors
-- 🎯 Interactive menu mode
-- 📝 Direct command-line arguments
-- 📖 Comprehensive help output
-- 📊 Progress tracking for bulk operations
+### 🔒 Both Platforms
+- ✅ **All 23 AbuseIPDB Categories**
+- ✅ **IPv4 & IPv6 Support**
+- ✅ **Secure API Key Storage** (.env file)
+- ✅ **Type-Safe** (Complete type hints)
+- ✅ **Comprehensive Error Handling**
+- ✅ **Cross-Platform** (Windows, Linux, macOS)
 
-## 🖥️ GUI Application
+---
 
-### Features
+## 📦 Installation & Setup
 
-- **Submit Tab** - Report single IPs with confidence slider
-- **Bulk Tab** - Submit multiple IPs simultaneously
-- **Categories Tab** - Browse all 23 abuse categories
-- **Settings Tab** - Configure API key and view setup instructions
-
-### Running the GUI
-
-**Option 1: Download Pre-Built Windows EXE (Easiest)**
-```bash
-# Go to GitHub Releases
-# Download abuse-reporter.exe
-# Run it - no Python installation needed!
+### Option 1: Windows EXE (Recommended for Windows Users)
 ```
-See [EXE_SETUP_GUIDE.md](EXE_SETUP_GUIDE.md) for detailed Windows exe instructions.
+✓ Download from GitHub Releases
+✓ Extract zip file
+✓ Run abuse-reporter.exe
+✓ No Python needed!
+```
+👉 [Detailed Windows Setup Guide](EXE_SETUP_GUIDE.md)
 
-**Option 2: Run from Source**
+### Option 2: From Source Code (Developers)
+
+**Requirements:**
+- Python 3.8+
+- pip package manager
+
+**Setup:**
 ```bash
-# Requires PyQt6
+git clone https://github.com/xdrew87/abuse-reporter.git
+cd abuse-reporter
 pip install -r requirements.txt
-
-# Run GUI
-python3 gui.py
+python3 gui.py  # Run GUI
 ```
 
-
-## ⌨️ CLI Mode
-
-## 📦 Installation
-
-### For Windows Users (No Python Needed)
-**Easiest option:**
-1. Go to [GitHub Releases](https://github.com/xdrew87/abuse-reporter/releases)
-2. Download `abuse-reporter.exe`
-3. Run it!
-
-See [EXE_SETUP_GUIDE.md](EXE_SETUP_GUIDE.md) for detailed setup.
-
-### For Developers / Python Users
-
-**Requirements**
-- **Python 3.8** or higher
-- **pip** (Python package manager)
-- **PyQt6** (for GUI - optional for CLI-only)
-
-### Setup
-
-1. **Clone/Download the repository**
-   ```bash
-   git clone https://github.com/xdrew87/abuse-reporter.git
-   cd abuse-reporter
-   ```
-
-2. **Install dependencies**
-   
-   For GUI + CLI (recommended):
-   ```bash
-   pip install -r requirements.txt
-   ```
-   
-   For CLI only:
-   ```bash
-   pip install requests python-dotenv
-   ```
-
-3. **Configure API Key**
-   ```bash
-   # Copy template
-   cp .env.example .env
-   
-   # Edit .env with your API key
-   # ABUSEIPDB_API_KEY=your_key_here
-   ```
-   
-   Get your **FREE** API key from [AbuseIPDB](https://www.abuseipdb.com/api)
-
-4. **Verify installation**
-   ```bash
-   # Test CLI
-   python main.py --list-categories
-   
-   # Launch GUI (if installed)
-   python gui.py
-   ```
-
-## 🚀 Quick Start
-
-### Windows Users - GUI (Recommended)
-**Download & Run:**
-1. Download `abuse-reporter.exe` from [Releases](https://github.com/xdrew87/abuse-reporter/releases)
-2. Extract files
-3. Run `abuse-reporter.exe`
-4. Settings tab → Paste API key → Save
-
-**[Full Windows Setup Guide →](EXE_SETUP_GUIDE.md)**
-
-### Linux/Mac Users OR Source Code
-
-**GUI Mode**
-```bash
-pip install -r requirements.txt
-python3 gui.py
-```
-
-**CLI Mode (No PyQt6 needed)**
+**For CLI only (no GUI dependencies):**
 ```bash
 pip install requests python-dotenv
 python3 main.py
 ```
 
-## 📖 Usage
+---
 
-### Interactive Menu
+## 💡 Usage Guide
 
-Simply run without arguments to launch the interactive menu:
+### GUI Tabs
+
+| Tab | Purpose |
+|-----|---------|
+| 📝 **Submit** | Report single IP with confidence level |
+| 📦 **Bulk** | Submit multiple IPs at once |
+| 📚 **Categories** | Browse all 23 abuse categories |
+| ⚙️ **Settings** | API key setup & dark mode |
+
+### Quick Examples
+
+### Quick Examples
+
+**GUI (Windows EXE or Source):**
 ```bash
-python main.py
+python3 gui.py   # Opens beautiful GUI window
 ```
 
-**Menu Options:**
-
-| Option | Description |
-|--------|-------------|
-| [1] Submit Abuse Report | Report a single IP with guided input |
-| [2] View Categories | Browse all 23 abuse categories |
-| [3] Test Report | Validate without submitting (dry-run) |
-| [4] Bulk Report | Submit multiple reports at once |
-| [0] Exit | Quit the application |
-
-### Command-Line Options
-
-```
-Usage: python main.py [OPTIONS]
-
-Arguments:
-  --ip IP                    IPv4 or IPv6 address to report
-  --categories CATS          Comma-separated category names or IDs
-  --comment TEXT             Abuse description (max 1000 characters)
-  --confidence SCORE         Confidence level 0-100 (default: 100)
-  --dry-run                  Validate without submitting to API
-  --verbose                  Show detailed output and API response
-  --cli                      Force interactive menu mode
-  --list-categories          List all categories and exit
-```
-
-## 📚 Examples
-
-### Single Report via CLI
+**CLI - Interactive:**
 ```bash
-python main.py \
-  --ip 203.0.113.45 \
+python3 main.py  # Menu-driven interface
+```
+
+**CLI - Direct Command:**
+```bash
+python3 main.py --ip 192.0.2.1 --categories brute-force --comment "Attack attempt"
+```
+
+**CLI - Bulk Report:**
+```bash
+python3 main.py --ip 192.0.2.1,198.51.100.1 --categories ssh --comment "Brute force" --confidence 95
+```
+
+**Test Before Submitting:**
+```bash
+python3 main.py --ip 192.0.2.1 --categories phishing --dry-run --verbose
+```
+
+---
+
+## 📚 API Documentation
+
+### CLI Arguments
+
+```bash
+python3 main.py [OPTIONS]
+
+--ip IP                   IPv4 or IPv6 address
+--categories CATS         Category names or IDs (comma-separated)
+--comment TEXT            Abuse description (max 1000 chars)
+--confidence SCORE        0-100 (default: 100)
+--dry-run                 Test without submitting
+--verbose                 Show detailed output
+--list-categories         List all categories
+--help                    Show help message
+```
+
+### Examples
+
+### Examples
+
+**Single Abuse Report:**
+```bash
+python3 main.py --ip 203.0.113.45 \
   --categories brute-force,ssh \
-  --comment "Multiple failed SSH login attempts on port 22" \
+  --comment "Failed SSH login attempts on port 22" \
   --confidence 90
 ```
 
-### Using Category IDs
+**Using Category IDs:**
 ```bash
-# Category IDs: 18=brute-force, 22=ssh
-python main.py \
-  --ip 198.51.100.12 \
+python3 main.py --ip 198.51.100.12 \
   --categories 18,22 \
   --comment "SSH brute force attack" \
   --confidence 95
 ```
 
-### Test Before Submitting
+**Validate First (Dry-Run):**
 ```bash
-python main.py \
-  --ip 192.0.2.1 \
-  --categories phishing,fraud-orders \
-  --comment "Phishing attempt targeting bank customers" \
-  --dry-run \
-  --verbose
+python3 main.py --ip 192.0.2.1 \
+  --categories phishing \
+  --comment "Phishing attempt" \
+  --dry-run --verbose
 ```
 
-### View Available Categories
-```bash
-python main.py --list-categories
-```
+---
 
-### Bulk Reporting
-```bash
-python main.py
-# Then select option [4] Bulk Report
-```
-
-## 🏷️ Categories (IDs 1-23)
+## 📋 Categories (IDs 1-23)
 
 | ID | Category | ID | Category |
 |----|----------|----|----|
@@ -252,160 +211,111 @@ python main.py
 | 11 | email-spam | 23 | iot-targeted |
 | 12 | blog-spam | | |
 
-**Usage Tips:**
-- Use format: `--categories 18,22,4` for multiple by ID
-- Or use names: `--categories brute-force,ssh,ddos-attack`
-- IDs and names can be mixed: `--categories 18,ssh,4`
-- Interactive mode displays the full table for easy selection
+**💡 Tips:**
+- Use by ID: `--categories 18,22,4`
+- Use by name: `--categories brute-force,ssh,ddos-attack`
+- Mix both: `--categories 18,ssh,4`
+
+---
 
 ## 🔐 Security
 
-- **No Secrets in Repo**: API keys stored in `.env` file (excluded from git)
-- **Input Validation**: All parameters validated before API submission
-- **HTTPS Only**: All API communications encrypted
-- **Timeout Protection**: 15-second timeout prevents hanging requests
-- **Clean Error Messages**: Sensitive information never exposed in errors
+✅ **Your Data is Safe:**
+- API keys stored locally in `.env` file only
+- Never hardcoded in source code
+- HTTPS-only API communication
+- Never exposed in error messages
 
-## 📋 File Structure
+---
+
+## 📂 Project Structure
 
 ```
 abuse-reporter/
-├── main.py           # CLI orchestration & menu system
-├── ui.py             # Terminal UI (colors, prompts, formatting)
-├── client.py         # AbuseIPDB API client
-├── categories.py     # Category definitions & mappings
-├── validators.py     # Input validation functions
-├── requirements.txt  # Python dependencies
-├── .env.example      # Example environment configuration
-├── .gitignore        # Git ignore patterns
-└── README.md         # This file
+├── gui.py                 # PyQt6 GUI application
+├── main.py               # CLI orchestration
+├── client.py             # AbuseIPDB API client
+├── categories.py         # 23 category definitions
+├── validators.py         # Input validation
+├── ui.py                 # Terminal UI utilities
+├── build.py              # EXE build script (local only)
+│
+├── logo.svg              # Application logo
+├── requirements.txt      # Python dependencies
+├── .env.example          # API key template
+├── .gitignore            # Git ignore rules
+├── LICENSE               # MIT License
+├── README.md             # This file
+├── EXE_SETUP_GUIDE.md    # Windows setup guide
+└── RELEASE_NOTES_v2.0.0.md # What's new
 ```
 
-## 🛠️ Technical Details
+---
 
-### Architecture
-- **Modular Design** - Separation of concerns across 5 Python modules
-- **Type Hints** - Full type annotations for IDE support
-- **Error Handling** - Comprehensive error handling throughout
-- **Input Validation** - All inputs validated before API calls
+## ⚙️ Technical Stack
 
-### API Integration
-- **Endpoint**: `https://api.abuseipdb.com/api/v2/report`
-- **Method**: POST with JSON payload
-- **Authentication**: API key in HTTP header
-- **Success Response**: HTTP 201 or 200 with data confirmation
-- **Timeout**: 15 seconds per request
+- **GUI:** PyQt6 6.6.0 (cross-platform)
+- **Build:** PyInstaller (Windows EXE)
+- **Config:** python-dotenv (secure storage)
+- **HTTP:** requests library (API communication)
+- **Code:** Full type hints, modular design
 
-### Supported OS
-- Linux ✅
-- macOS ✅
-- Windows ✅
+**Python 3.8+** | **Windows/Linux/macOS**
+
+---
 
 ## 🐛 Error Handling
 
-The tool gracefully handles:
-- Invalid IP addresses (IPv4/IPv6 validation)
-- Invalid categories (with helpful suggestions)
-- Missing/invalid API key
-- Rate limiting (429 Too Many Requests)
-- Authentication failures (401 Unauthorized)
-- Server errors (5xx responses)
-- Network timeouts and connection issues
+Gracefully handles:
+- ✅ Invalid IP addresses (IPv4/IPv6)
+- ✅ Invalid categories
+- ✅ Missing/wrong API key
+- ✅ Network timeouts
+- ✅ API rate limiting
+- ✅ Server errors
+- ✅ Authentication failures
 
-## 📊 Exit Codes
+---
 
-- `0` - Success or validation passed
-- `1` - Validation error, API error, or invalid input
+## 🤝 Contributing
 
-## 💡 Tips & Tricks
+Want to help? We'd love it! 
 
-### Setting API Key
-
-**Option 1: `.env` file (Recommended)**
-```bash
-cp .env.example .env
-# Edit .env with your API key
-```
-
-**Option 2: Environment variable**
-```bash
-export ABUSEIPDB_API_KEY='your_key_here'
-python main.py
-```
-
-**Option 3: PowerShell (Windows)**
-```powershell
-$env:ABUSEIPDB_API_KEY='your_key_here'
-python main.py
-```
-
-### Batch Reporting Script
-```bash
-#!/bin/bash
-for ip in 192.0.2.1 198.51.100.1 203.0.113.1; do
-  python main.py --ip $ip --categories brute-force --comment "Suspicious activity" --confidence 75
-done
-```
-
-## 💻 Development
-
-### Project Setup
-```bash
-# Clone repository
-git clone https://github.com/xdrew87/abuse-reporter.git
-cd abuse-reporter
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-### Running Tests
-```bash
-# Test dry-run mode
-python main.py --dry-run --ip 198.51.100.1 --categories brute-force --comment "Test"
-
-# Test with verbose output
-python main.py --ip 192.0.2.1 --categories phishing --comment "Test" --verbose
-```
-
-## 📝 Contributing
-
-Contributions are welcome! To contribute:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
+1. Fork the repo
+2. Create feature branch: `git checkout -b feature/YourFeature`
+3. Commit: `git commit -m 'Add YourFeature'`
+4. Push: `git push origin feature/YourFeature`
 5. Open a Pull Request
+
+---
 
 ## 📄 License
 
-MIT License - See LICENSE file for details. Feel free to use this tool for reporting abuse and improving internet security.
+MIT License - Use freely for reporting abuse and improving security!
 
-## 🙏 Acknowledgments
+See [LICENSE](LICENSE) file for details.
 
-- [AbuseIPDB](https://www.abuseipdb.com) - For providing the API and documentation
-- Built with ❤️ for cybersecurity professionals and network administrators
+---
 
-## 📧 Support
+## 🙏 Thanks
 
-For issues, questions, or feedback:
-- Check the [Examples](#examples) section first
-- Use `--help` flag for quick reference
-- Use `--verbose` to see detailed API responses
-- Review error messages - they provide helpful hints
-- Check [AbuseIPDB API docs](https://www.abuseipdb.com/api)
+- **[AbuseIPDB](https://www.abuseipdb.com)** - Powerful abuse database API
+- **PyQt6** - Beautiful GUI framework
+- **Python Community** - Excellent libraries
 
 ---
 
 <div align="center">
 
-**Make the internet safer, one report at a time.**
+## 🎯 Quick Links
 
-[Back to top](#abuseipdb-reporter-cli)
+[📥 Download v2.0.0](https://github.com/xdrew87/abuse-reporter/releases) • 
+[📖 Setup Guide](EXE_SETUP_GUIDE.md) • 
+[✨ What's New](RELEASE_NOTES_v2.0.0.md) • 
+[🐛 Issues](https://github.com/xdrew87/abuse-reporter/issues)
+
+### Made with ❤️ for cybersecurity professionals
+
+**Make the internet safer, one report at a time.** 🛡️
 
 </div>
