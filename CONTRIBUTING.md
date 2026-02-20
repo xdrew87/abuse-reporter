@@ -54,7 +54,7 @@ What actually happens
 **Development Setup:**
 ```bash
 # Clone your fork
-git clone https://github.com/your-username/abuse-reporter.git
+git clone https://github.com/yxdrew87/abuse-reporter.git
 cd abuse-reporter
 
 # Create virtual environment
@@ -250,3 +250,4 @@ Contributors will be recognized in:
 - Release notes
 
 Thank you for helping make this project better! 🎉
+
