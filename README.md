@@ -309,7 +309,7 @@ See [LICENSE](LICENSE) file for details.
 
 ## 🎯 Quick Links
 
-[📥 Download v2.0.0](https://github.com/xdrew87/abuse-reporter/releases) • 
+[📥 Download v2.0.0](https://github.com/xdrew87/abuse-reporter/releases/tag/v2.0.0) • 
 [📖 Setup Guide](EXE_SETUP_GUIDE.md) • 
 [✨ What's New](RELEASE_NOTES_v2.0.0.md) • 
 [🐛 Issues](https://github.com/xdrew87/abuse-reporter/issues)
