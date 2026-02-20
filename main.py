@@ -9,7 +9,19 @@ from pathlib import Path
 
 # Load environment variables from .env file
 from dotenv import load_dotenv
-load_dotenv(Path(__file__).parent / '.env')
+
+# Multi-location .env discovery for better portability
+# Especially useful for exe distribution where .env might be in different locations
+env_paths = [
+    Path.cwd() / '.env',              # Current working directory (exe users)
+    Path(__file__).parent / '.env',   # Script/exe directory (development)
+]
+for env_path in env_paths:
+    if env_path.exists():
+        load_dotenv(env_path)
+        break
+else:
+    load_dotenv()  # Fallback to environment variables only
 
 from categories import validate_categories, get_category_id
 from validators import (
